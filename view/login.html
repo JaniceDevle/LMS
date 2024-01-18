@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>User Login</title>
+        <link href=./css/login.css rel="stylesheet"/>
+    </head>
+    <body background="./images/loginbg.png" style="background-size: 100% 100%;background-attachment: fixed;">
+    <div class = box style="margin: 25vh auto;">
+        <div class = title>User Login</div>
+         <!-- Form for user login, action points to login.php using POST method -->
+        <form action="./login.php" method="post">
+            <!-- Table to organize form elements -->
+            <table class = login>
+                <tr><th>User ID: </th><td><input type="text" name="username"/></td></tr>
+                <tr><th>Password: </th><td><input type="password" name="password"/></td></tr>
+                <tr><th>Captcha: </th><td><input type="text" name="captcha"/></td></tr>
+                <tr><th></th><td><img src="./code.php"/></td></tr>
+                <tr><th></th><td>
+                    <div style="display: flex; column-gap: 10px;"> 
+                        <input type="submit" value="login"/>
+                        <a href="register.php"><input type="button" value='Register'/>
+                    </div>
+                    </a>
+                </td></tr>
+            </table>
+        </form>
+    </div>
+    </body>
+</html>

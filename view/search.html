@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div id="nav">
+      <nav class="container">
+        <ul>
+          <li>Library Management System</li>
+          <li id="home" class="<?= $homeActiveClass ?>">
+            <a href="./index.php">Home</a>
+          </li>
+          <li id="book" class="<?= $bookActiveClass ?>">
+            <a href="./search.php">Book Management</a>
+          </li>
+          <li id="borrow"><a href="./borrow.php">Borrowing Management</a></li>
+        </ul>
+
+        <?php require './avatar.php'; ?>
+      </nav>
+    </div>
+
+    <div class="box">
+      <div class="top">
+        <div class="title">Search Books</div>
+        <div class="nav">
+          <a href="./add.php">Add book</a>
+          <a href="./logout.php">Logout</a>
+        </div>
+      </div>
+      <div class="main">
+         <!-- Form for searching books -->
+        <form method="post" action="" class="search-form">
+          <div>
+            <!-- Input field for search term -->
+            <label for="searchTerm">Search Term:</label>
+            <input type="text" id="searchTerm" name="searchTerm" required />
+          </div>
+
+          <div>
+            <!-- Dropdown menu for selecting search type -->
+            <label for="searchType">Search Type:</label>
+            <select id="searchType" name="searchType">
+              <option value="title">Title</option>
+              <option value="id">ID</option>
+            </select>
+          </div>
+
+          <div>
+            <button type="submit">Search</button>
+          </div>
+        </form>
+
+        <!-- Table displaying the list of books -->
+        <table class="lib-list">
+          <tr>
+            <th width="200">id</th>
+            <th>title</th>
+            <th width="200">author</th>
+            <th width="200">country</th>
+            <th width="200">addtime</th>
+            <th width="200">Operation</th>
+          </tr>
+          <?php foreach($data as $v): ?>
+          <tr>
+            <td class="center"><?php echo $v['id'];?></td>
+            <td class="lib-title">
+              <a href="./show.php?id=<?php echo $v['id'];?>"
+                ><?php echo $v['title'];?></a
+              >
+            </td>
+            <td class="center"><?php echo $v['author'];?></td>
+            <td class="center"><?php echo $v['country'];?></td>
+            <td class="center"><?php echo $v['addtime'];?></td>
+            <td class="center">
+              <a href="./edit.php?id=<?php echo $v['id'];?>">Edit</a>
+              <a
+                href="./del.php?id=<?php echo$v['id'];?>"
+                onclick="return confirm ('Sure about deletion?');"
+                >Delete</a
+              >
+            </td>
+          </tr>
+          <?php endforeach;?>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    background-color: #3498db; 
+    color: #fff;
+}
+
+.box {
+    border: 1px solid #ccc;
+    background: #fff;
+    width: 400px;
+    margin: 20px auto;
+    padding: 10px 30px;
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px dotted #999;
+    margin-bottom: 20px;
+    color: #3498db; 
+}
+
+.login {
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+
+.login th {
+    font-weight: normal;
+    text-align: right;
+    padding: 8px 0;
+    vertical-align: top;
+    color: #3498db; 
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+    border: 1px solid #3498db; 
+    padding: 8px;
+    color: #333;
+    width: 150px;
+}
+
+.login input[type="submit"],
+.login input[type="button"] {
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #3498db; 
+    color: #fff; 
+    border: none;
+    border-radius: 4px;
+}
+
+.login .captcha {
+    line-height: 14px;
+}
+
+.login .captcha img {
+    float: left;
+    margin-right: 10px;
+    margin-top: 3px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #3498db; 
+    border-radius: 4px; 
+}
+
+.login .captcha a {
+    font-size: 12px;
+    color: #36f;
+}

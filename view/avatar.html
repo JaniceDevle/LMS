@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css"/>
+</head>
+
+<body>
+
+<div style="display: flex; align-items: center;">
+    <!-- Buttons that trigger modal dialogs -->
+    <button id="openModalBtn">
+        <img class="avatar-image" src="./get_avatar.php" alt="User Avatar">
+    </button>
+
+    <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest'; ?>
+</div>
+
+<!-- Modal dialogs -->
+<dialog id="myModal">
+    <p>Do you want to re-upload your avatar?</p>
+    
+    <!-- Provide a form to re-upload your avatar -->
+    <form action="upload_avatar.php" method="post" enctype="multipart/form-data">
+        <label for="avatarInput">Choose a new avatar:</label>
+        <input type="file" name="avatarInput" accept="image/*">
+        <button type="submit" name="uploadAvatarBtn">Upload</button>
+    </form>
+
+</dialog>
+
+</div>
+
+<script>
+    // Getting Modal Dialog and Button Elements
+    var modal = document.getElementById("myModal");
+    var openModalBtn = document.getElementById("openModalBtn");
+    var closeModalBtn = document.getElementById("closeModalBtn");
+    var uploadExternalBtn = document.getElementById("uploadExternalBtn");
+    var externalLinkInput = document.getElementById("externalLinkInput");
+
+    // Open the modal dialog
+    openModalBtn.addEventListener("click", function () {
+        modal.showModal();
+    });
+
+    // Close the modal dialog
+    closeModalBtn.addEventListener("click", function () {
+        modal.close();
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./css/style.css"/>
+    </head>
+    <body>
+        <div class="box">
+            <div class="top">
+                <div class="title">Modify Book Information</div>
+                <div class="nav">
+                    <a href='index.php'>Go back</a>
+                </div>
+            </div>
+            <div class="main">
+                <!-- Form for modifying book information using the POST method -->
+                <form method="post">
+                    <table class="lib-edit">
+                        <tr>
+                            <th>title</th>
+                            <td><input type="text" name="title" value="<?php echo $data['title'];?>"/></td>
+                        </tr>
+                        <tr>
+                            <th>author</th>
+                            <td><input type="text" name="author" value="<?php echo $data['author'];?>"/></td>
+                        </tr>
+                        <tr>
+                            <th>country</th>
+                            <td><input type="text" name="country" value="<?php echo $data['country'];?>"/></td>
+                        </tr>
+                        <tr>
+                            <th>state</th>
+                            <td>
+                                <!-- Dropdown menu for selecting the state, with options for Unlent and Lent -->
+                                <select name="state">
+                                    <option value="1" <?php echo (isset($data['state']) && $data['state'] == 1) ? 'selected' : ''; ?>>Unlent</option>
+                                    <option value="0" <?php echo (isset($data['state']) && $data['state'] == 0) ? 'selected' : ''; ?>>Lent</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>content</th>
+                            <td><textarea name="content"><?php echo $data['content'];?></textarea></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td><input type="submit" value="Submit changes."/></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- Link to an external stylesheet for styling -->
+        <link rel="stylesheet" href="./css/style.css"/>
+    </head>
+    <body>
+        <div class="box">
+            <!-- Container for the entire page -->
+            <div class="top">
+                <!-- Header section with title and navigation -->
+                <div class="title">Add Book</div>
+                <div class="nav">
+                    <a href="index.php">Go back</a>
+                </div>
+            </div>
+            <div class="main">
+                <!-- Form for adding a new book, with action and method attributes specified -->
+                <form action="./add.php" method="post">
+                    <table class="lib-edit">
+                        <tr>
+                            <th>title</th>
+                            <td><input type="text" name="title" placeholder="Fill in the book title."/></td>
+                        </tr>
+                        <tr>
+                            <th>author</th>
+                            <td><input type="text" name="author" placeholder="Fill in the author of the book."/></td>
+                        </tr>
+                        <tr>
+                            <th>country</th>
+                            <td><input type="text" name="country" placeholder="Fill in the country of the author."/></td>
+                        </tr>
+                        <tr>
+                            <th>state</th>
+                            <td>
+                                <select name="state">
+                                    <option value="1" <?php echo (isset($data['state']) && $data['state'] == 1) ? 'selected' : ''; ?>>Unlent</option>
+                                    <option value="0" <?php echo (isset($data['state']) && $data['state'] == 0) ? 'selected' : ''; ?>>Lent</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>content</th>
+                            <td><textarea name="content" placeholder="Fill in the summary of the book."></textarea></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td><input type="submit" value="Submission of entry registers."/></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
